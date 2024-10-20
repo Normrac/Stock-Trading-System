@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "chart.js": "^4.4.4",
+    "live-server": "^1.2.2"
+  }
+}

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Trading System</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script defer src="app.js"></script> <!-- Make sure to load your app.js file -->
+</head>
+
+<body>
+    <header>
+        <h1>Stock Trading System</h1>
+    </header>
+
+    <div class="container">
+        <nav class="sidebar">
+            <ul>
+                <li><a href="#">Trade</a></li>
+                <li><a href="#">Transaction Log</a></li>
+                <li><a href="#">Portfolio</a></li>
+                <li><a href="#">How to Trade</a></li>
+                <li><a href="#">FAQ</a></li>
+                <li><a href="#">Terms of Use</a></li>
+            </ul>
+        </nav>
+
+        <main>
+            <!-- Portfolio Chart and Live Chat -->
+            <section class="card portfolio">
+                <!-- Search Bar and Chart Flex Container -->
+                <div class="chart-livechat-container">
+                    <!-- Left Side: Search Bar and Chart -->
+                    <div class="left-side">
+                        <!-- Search Bar -->
+                        <div class="search-container">
+                            <input type="text" id="stock-search" placeholder="Search for a stock..." />
+                            <button onclick="searchStock()">Search</button>
+                        </div>
+
+                        <!-- Chart -->
+                        <div class="chart-container">
+                            <canvas id="portfolioGraph"></canvas>
+                        </div>
+                    </div>
+
+                    <!-- Right Side: Live Chat -->
+                    <div class="live-chat-container">
+                        <h4>Live Chat</h4>
+                        <div class="chat-box">
+                            <div class="chat-message">User1: Hello!</div>
+                            <div class="chat-message">User2: Hi there!</div>
+                        </div>
+                        <div class="chat-input">
+                            <input type="text" placeholder="Type a message..." />
+                            <button>Send</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chart Controls -->
+                <div class="chart-controls">
+                    <button onclick="updateChart('1D')">1D</button>
+                    <button onclick="updateChart('1M')">1M</button>
+                    <button onclick="updateChart('Max')">Max</button>
+                </div>
+            </section>
+
+            <!-- User's Assets -->
+            <section class="card assets">
+                <h4>Your Assets</h4>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Balance</th>
+                            <th>Stock Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>ABC Corp</td>
+                            <td>$212.46</td>
+                            <td>$123.45</td>
+                        </tr>
+                        <!-- Add more rows for additional assets -->
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- Watchlist -->
+            <section class="card watchlist">
+                <h4>Watchlist</h4>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Price</th>
+                            <th>Change</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Watchlist items will be populated by JavaScript -->
+                    </tbody>
+                </table>
+            </section>
+        </main>
+    </div>
+
+</body>
+
+</html>
+
